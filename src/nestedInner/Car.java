@@ -1,9 +1,11 @@
-import javax.security.sasl.SaslClient;
+package nestedInner;
+
 import java.util.Scanner;
 
 public class Car {
     String carBrand;
-    int speed, weight;
+    public int speed;
+    int weight;
 
     public Car(int weight, String carBrand) {
         this.weight = weight;
