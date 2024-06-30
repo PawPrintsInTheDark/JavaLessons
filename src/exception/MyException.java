@@ -1,6 +1,6 @@
 package exception;
 
-public class Exception {
+public class MyException {
 
     public static void checkingForOdd(int i) throws java.lang.Exception {
         if(i % 2 == 1) throw new java.lang.Exception("Ошибка! Число нечётное");
