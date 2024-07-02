@@ -8,8 +8,7 @@ public class MyGenerics {
         t[idx2] = temp;
     }
 
-    public static <T> void checkOrder(T[] t, T[] t2) {
-        Boolean equal = false;
+    public static <T> Boolean checkOrder(T[] t, T[] t2) {
         T[] temp,temp2;
         if (t.length <= t2.length) {
             temp = t;
@@ -19,8 +18,8 @@ public class MyGenerics {
             temp2 = t;
         }
         for (int i = 0; i < temp.length; i++) {
-            equal = temp[i].equals(temp2[i]);
+            if(temp[i].equals(temp2[i])) return true;
         }
-        System.out.println(equal);
+        return false;
     }
 }
