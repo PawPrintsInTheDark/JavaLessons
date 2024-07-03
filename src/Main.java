@@ -1,23 +1,31 @@
-import generics.MyGenerics;
+import stream.Person;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class Main {
 
     public static void main(String[] args) {
-        String[] str = {"1", "2", "3", "4", "5", "6", "10", "54"};
-        String[] str2 = {"1", "2", "3", "4", "5", "6"};
 
-        System.out.println("Первая проверка:");
-        System.out.println(MyGenerics.checkOrder(str, str2));
+        List<String> list = Arrays.asList("яблоко", "банан", "апельсин", "клубника", "киви", "брокколи", "огурец","ананас","арбуз");
+        int count = (int) list.stream().filter(el -> el.startsWith("а")).count();
+        System.out.println(count);
 
-        //меняем позиции в массиве
-        MyGenerics.swap(str, 2, 5);
-        System.out.println("Вторая проверка:");
-        System.out.println(MyGenerics.checkOrder(str, str2));
+        List<Person> personList = new ArrayList<>();
 
-        System.out.println("Массив после смены элементов местами:");
-        for (String s : str) {
-            System.out.print(s + " ");
-        }
+        personList.add(new Person("Анна", 25));
+        personList.add(new Person("Борис", 30));
+        personList.add(new Person("Виктория", 22));
+        personList.add(new Person("Григорий", 28));
+        personList.add(new Person("Дарья", 35));
+        personList.add(new Person("Евгений", 40));
+        personList.add(new Person("Жанна", 27));
+        personList.add(new Person("Захар", 33));
+        personList.add(new Person("Ирина", 29));
+        personList.add(new Person("Кирилл", 31));
 
+        personList.stream()
+                .filter(person -> person.getAge() > 30).forEach(System.out::println);
     }
 }
