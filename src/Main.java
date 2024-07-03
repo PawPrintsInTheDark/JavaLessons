@@ -1,21 +1,33 @@
-import maps.MapsUtils;
+import enums.Alphabet;
+import enums.EnumUtils;
+import enums.Person;
 
-import java.util.HashMap;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
 
     public static void main(String[] args) {
-        HashMap<Integer, String> map = new HashMap<>();
+        System.out.println(EnumUtils.getIndex(Alphabet.F));
 
-        map.put(1, "Дуб");
-        map.put(236, "Ель");
-        map.put(7, "Ясень");
-        map.put(17, "Акация");
-        map.put(54, "Берёза");
-        map.put(4, "Сакура");
+        List<Person> personList = new ArrayList<>();
 
-        System.out.println(MapsUtils.getKeys(map));
+        personList.add(new Person("Анна", 25, Person.Gender.FEMALE));
+        personList.add(new Person("Иван", 30, Person.Gender.MALE));
+        personList.add(new Person("Мария", 22, Person.Gender.FEMALE));
+        personList.add(new Person("Петр", 28, Person.Gender.MALE));
+        personList.add(new Person("Екатерина", 35, Person.Gender.FEMALE));
+        personList.add(new Person("Алексей", 40, Person.Gender.MALE));
+        personList.add(new Person("Ольга", 20, Person.Gender.FEMALE));
+        personList.add(new Person("Дмитрий", 33, Person.Gender.MALE));
+        personList.add(new Person("Наталья", 27, Person.Gender.FEMALE));
+        personList.add(new Person("Сергей", 29, Person.Gender.MALE));
 
-        System.out.println(MapsUtils.sort3(map));
+        for (Person person : EnumUtils.getGender(personList,Person.Gender.FEMALE)) {
+            System.out.println(person.toString());
+        }
+
     }
+
+
 }
