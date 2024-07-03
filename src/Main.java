@@ -1,23 +1,28 @@
-import generics.MyGenerics;
+import arraylist.ListUtils;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
 
 public class Main {
 
     public static void main(String[] args) {
-        String[] str = {"1", "2", "3", "4", "5", "6", "10", "54"};
-        String[] str2 = {"1", "2", "3", "4", "5", "6"};
+        ArrayList<String> list = new ArrayList<>();
 
-        System.out.println("Первая проверка:");
-        System.out.println(MyGenerics.checkOrder(str, str2));
+        list.add("Red");
+        list.add("Yellow");
+        list.add("Green");
+        list.add("Orange");
+        list.add("Green");
+        System.out.println(ListUtils.find(list,"Orange"));
 
-        //меняем позиции в массиве
-        MyGenerics.swap(str, 2, 5);
-        System.out.println("Вторая проверка:");
-        System.out.println(MyGenerics.checkOrder(str, str2));
 
-        System.out.println("Массив после смены элементов местами:");
-        for (String s : str) {
-            System.out.print(s + " ");
-        }
-
+        LinkedList<Integer> list2 = new LinkedList<>();
+        list2.add(34);
+        list2.add(65);
+        list2.add(12);
+        list2.add(5);
+        list2.add(76);
+        list2.add(9);
+        System.out.println(ListUtils.swapFL(list2));
     }
 }

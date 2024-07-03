@@ -2,6 +2,7 @@ package arraylist;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 
 public class ListUtils {
 
@@ -12,9 +13,10 @@ public class ListUtils {
         return false;
     }
 
-    public static <T> void swapFL(LinkedList<T> list){
+    public static <T> LinkedList<T> swapFL(LinkedList<T> list){
         T temp = list.getFirst();
         list.set(0, list.getLast());
         list.set(list.size()-1, temp);
+        return list;
     }
 }
